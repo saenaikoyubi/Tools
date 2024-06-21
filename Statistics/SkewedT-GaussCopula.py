@@ -13,9 +13,9 @@ class Loss(nn.Module):
         return -torch.sum(outputs)
 
 class Gauss2d:
-    def __init__(self):
+    def __init__(self, delta=.0005):
         self.rho = np.nan
-        self.delta = .0002
+        self.delta = delta
         self.span = 7
 
     def pdf(self, x, y):
