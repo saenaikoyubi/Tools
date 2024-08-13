@@ -61,7 +61,7 @@ class PCE:
         return True
         
     def transform(self, X:pd.DataFrame):
-        Y = (self.A@X.T).T
+        Y = (self.A@(X-self.X_mean).T).T
         Y.columns = X.columns
         return Y
     
